@@ -6,7 +6,7 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethod
     {
         public static void Run()
         {
-            Message message = MessageSender
+            Message message = MessageService
                 .InitializeFactories(MessageSendType.Sms)
                 .CreateProduct("0553-00","Bu bir test mesajıdır.");
 

@@ -11,12 +11,12 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethod
         Sms,
         Email
     }
-    public class MessageSender
+    public class MessageService
     {
         private readonly Dictionary<MessageSendType, MessageFactory> _factories;
         private readonly MessageSendType _messageSendType;
 
-        private MessageSender(MessageSendType messageSendType)
+        private MessageService(MessageSendType messageSendType)
         {
             _factories = new Dictionary<MessageSendType, MessageFactory>
             {
@@ -27,8 +27,8 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethod
             _messageSendType = messageSendType;
         }
 
-        public static MessageSender InitializeFactories(MessageSendType messageSendType) 
-            => new MessageSender(messageSendType);
+        public static MessageService InitializeFactories(MessageSendType messageSendType) 
+            => new MessageService(messageSendType);
 
         public Message CreateProduct(string messageAddress, string messageContent) 
             => _factories[_messageSendType].CreateMessageProduct(messageAddress, messageContent);
