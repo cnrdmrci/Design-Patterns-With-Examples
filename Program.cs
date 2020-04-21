@@ -1,4 +1,5 @@
 ﻿using System;
+using DesignPatterns.CreationalPatterns.AbstractFactory;
 using DesignPatterns.CreationalPatterns.FactoryMethod;
 using DesignPatterns.CreationalPatterns.Singleton;
 
@@ -19,7 +20,8 @@ namespace DesignPatterns
 
         static void creationalPatterns()
         {
-            UsageOfFactoryMethod.Run(); 
+            UsageOfFactoryMethod.Run();
+            UsageOfAbstractFactory.Run();
             UsageOfSingleton.Run();
         }
 
