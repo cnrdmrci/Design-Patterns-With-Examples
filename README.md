@@ -13,6 +13,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 - Creational Patterns
   - Factory Design Pattern
+  - Abstract Factory Design Pattern
   - Singleton Design Pattern
 - Structural Patterns
 
@@ -31,6 +32,14 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 
 ![image](https://user-images.githubusercontent.com/16361055/79768529-94b9d980-8333-11ea-83c6-c922ac2347a8.png)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Abstract Factory Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Birbiriyle ilişkili ve farklı varyantlara sahip sınıfların üretiminde kullanılan bir tasarım kalıbıdır. İlişkili ürünler bir matris biçiminde tasarlanması gerekmektedir. Aşağıda UML diagramı Abstract Design Patterni temsil etmektedir. Örneğimizde bir yayınevimiz var ve bu yayın evinde ; kitap ve gazete üretimi yapmaktadır. Gereken durumlarda yeni ürünlerin eklenebilecek olması da tabiki bu tasarım kalıbının geliştirilebilir olmasının yararıdır. Üretimi yapılan kitap ve gazete ürünlerinin ingilizce ve rusça olarak 2 üretim çeşidini oluşturduk. Böylece bir matris görünümü elde ederek gereken şartlar sağlandı. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıda verilen UML diagramında, genelde çizilen UML diagramlarının aksine, farklı bir çizim tasarımı kullanılarak matris şeklinde oluşturulmuş ve anlaşılması kolaylaştırılmıştır. Böylece Client , PublishingService(YayıneviServisi) yetkilisiyle iletişim kurarak, dil seçimini yaparak istediği ürünü üretim için istekte bulunabilecektir. Üzerine konuştuğumuz UML diagramı aşağıdadır.
+
+![image](https://user-images.githubusercontent.com/16361055/79878898-a4e6bd00-83f6-11ea-8f91-407dcaec4de1.png)
+
 
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Singleton Design Pattern
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yapacağımız işlemler için bir nesnenin bir kez oluşturulmasının yeterli olduğu durumlarda kullanılır. Sınıfımızın nesnesini bir kez tanımlarız ve programı durdurana kadar bu nesne üzerinden işlem yaparız. İlgili sınıftan bir nesne talep ettiğimizde ilk kez işlem yapılıyorsa yeni bir nesne dönecek ancak ilk seferden sonrakilerde aynı nesneyi verecektir. Programdaki örneğimizde toplama ve çıkartma işlemi yapan bir sınıf oluşturduk. Toplama ve çıkartma işlemlerinde parametreler ile çalışan methodlar bize yeterli olduğu için hesaplama sınıfın aracı olarak kullandık. Bir kez tanımladıktan sonra hep aynı nesneyi kullandık. Örnek UML diagramı aşağıdadır.
