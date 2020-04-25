@@ -14,6 +14,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 - Creational Patterns
   - Factory Design Pattern
   - Abstract Factory Design Pattern
+  - Builder Design Pattern
   - Singleton Design Pattern
 - Structural Patterns
 
@@ -40,6 +41,14 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 ![image](https://user-images.githubusercontent.com/16361055/79878898-a4e6bd00-83f6-11ea-8f91-407dcaec4de1.png)
 
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Builder Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Builder Design Pattern, bir bütünü oluşturan parçaların birleştirilmesiyle ortaya yeni bir ürün çıkartmak için kullanılan bir tasarım kalıbıdır. Parçalardan istediğimizi eklemek yada eklememek tercihine sahibiz.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Bu tasarım kalıbının ortaya çıkmasına sebep olan sorun şöyledir; bir bütünü oluşturduğumuzu düşünelim. Bu bütünü tek bir sınıf üzerinden parametre ile yönetmeye kalktığımızda, bir çok parametre yanyana verilecek ve istenmeyen değerler null olarak atanmak zorunda kalacaktır. Böyle bir durum ise oldukça karmaşıklığa sebep olmaktadır. Ancak eklenmek istenen parçalar ayrı methodlar halinde eklendiğinde, hem okunurluk artacak hem de kolay yönetim sağlanarak modülerite artacaktır.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında çizilen builder tasarımı bir öğün yemeği oluşturmakta kullanılmıştır. Çocuk ve yetişkin olarak ayrılan iki kısım içerisinde farklı farklı çeşitlilik barındırabilecektir. Çocuğun içeceği süt ve yetişkinin içeceği çay olabilir. Yada herhangi bir içecek verilmeyebilir. Farklı durumlar da mevcut interface ile sisteme tam entegre olabilir. Direktör ile de istenen değer dependency injection yöntemiyle kolaylıkla oluşturulabilir. Farklı tarz örnekler de kod üzerinde gösterilmiştir. 
+
+![image](https://user-images.githubusercontent.com/16361055/80277773-027e5080-86fa-11ea-83de-2a6f20c4414f.png)
 
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Singleton Design Pattern
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yapacağımız işlemler için bir nesnenin bir kez oluşturulmasının yeterli olduğu durumlarda kullanılır. Sınıfımızın nesnesini bir kez tanımlarız ve programı durdurana kadar bu nesne üzerinden işlem yaparız. İlgili sınıftan bir nesne talep ettiğimizde ilk kez işlem yapılıyorsa yeni bir nesne dönecek ancak ilk seferden sonrakilerde aynı nesneyi verecektir. Programdaki örneğimizde toplama ve çıkartma işlemi yapan bir sınıf oluşturduk. Toplama ve çıkartma işlemlerinde parametreler ile çalışan methodlar bize yeterli olduğu için hesaplama sınıfın aracı olarak kullandık. Bir kez tanımladıktan sonra hep aynı nesneyi kullandık. Örnek UML diagramı aşağıdadır.
