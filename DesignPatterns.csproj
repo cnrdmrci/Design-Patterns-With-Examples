@@ -5,9 +5,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="CreationalPatterns\Builder\NormalBuilder\" />
-    <Folder Include="CreationalPatterns\Builder\SeperatedBuilder\" />
-  </ItemGroup>
-
 </Project>
