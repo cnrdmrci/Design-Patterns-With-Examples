@@ -15,6 +15,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Factory Design Pattern
   - Abstract Factory Design Pattern
   - Builder Design Pattern
+  - Prototype Design Pattern
   - Singleton Design Pattern
 - Structural Patterns
 
@@ -49,6 +50,16 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında çizilen builder tasarımı bir öğün yemeği oluşturmakta kullanılmıştır. Çocuk ve yetişkin olarak ayrılan iki kısım içerisinde farklı farklı çeşitlilik barındırabilecektir. Çocuğun içeceği süt ve yetişkinin içeceği çay olabilir. Yada herhangi bir içecek verilmeyebilir. Farklı durumlar da mevcut interface ile sisteme tam entegre olabilir. Direktör ile de istenen değer dependency injection yöntemiyle kolaylıkla oluşturulabilir. Farklı tarz örnekler de kod üzerinde gösterilmiştir. 
 
 ![image](https://user-images.githubusercontent.com/16361055/80277773-027e5080-86fa-11ea-83de-2a6f20c4414f.png)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Prototype Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir işlemi gerçekleştirebilmek için devamlı aynı nesnenin üretilmesi ve üzerine farklı eklemeler yapıldığı durumlarda kullanılmaktadır. Devamlı kullanılacak bir prototip oluşturulmaktadır ve gerektiği yerlerde bu prototip alınarak üzerine eklemeler yapılmaktadır. Prototip için hazırladığımız nesneyi bir sınıfın içine koyabiliriz ve bu nesneyi gerektiği yerlerde belirli kopyalama fonkisyonlarına göre bir kopyasını oluşturarak alabiliriz.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mevcut nesnenin erişilemeyen değişkenlerini aynı şekilde kopyalayabilmek için veya veritabanından alınan bilgilerle içeriğinin doldurulmasından dolayı ortaya çıkaibilecek yavaşlıktan kurtulmak için bu tasarım deseni kullanılmaktadır. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında kedi ve köpek sınıfları ortak bir alandan yönetilebilmesi için bir evcil hayvan prototip interfacesine bağlandı. Prototipleri oluşturacağımız ve saklayacağımız yeni bir sınıf olarak PrototypeRegistry sınıfı oluşturuldu. Oluşturduğumuz prototipleri bu sınıf içerisindeki listeye bir key yardımıyla ekliyoruz. Gereken yerde shallow veya deep copy yaparak bu listeden bir kopyasını alıyoruz. 
+
+
+![image](https://user-images.githubusercontent.com/16361055/80307484-05e50b00-87d2-11ea-87ef-e4ef199c2ecd.jpg)
 
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Singleton Design Pattern
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yapacağımız işlemler için bir nesnenin bir kez oluşturulmasının yeterli olduğu durumlarda kullanılır. Sınıfımızın nesnesini bir kez tanımlarız ve programı durdurana kadar bu nesne üzerinden işlem yaparız. İlgili sınıftan bir nesne talep ettiğimizde ilk kez işlem yapılıyorsa yeni bir nesne dönecek ancak ilk seferden sonrakilerde aynı nesneyi verecektir. Programdaki örneğimizde toplama ve çıkartma işlemi yapan bir sınıf oluşturduk. Toplama ve çıkartma işlemlerinde parametreler ile çalışan methodlar bize yeterli olduğu için hesaplama sınıfın aracı olarak kullandık. Bir kez tanımladıktan sonra hep aynı nesneyi kullandık. Örnek UML diagramı aşağıdadır.
