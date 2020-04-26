@@ -2,6 +2,7 @@
 using DesignPatterns.CreationalPatterns.AbstractFactory;
 using DesignPatterns.CreationalPatterns.Builder;
 using DesignPatterns.CreationalPatterns.FactoryMethod;
+using DesignPatterns.CreationalPatterns.Prototype;
 using DesignPatterns.CreationalPatterns.Singleton;
 
 namespace DesignPatterns
@@ -24,6 +25,7 @@ namespace DesignPatterns
             UsageOfFactoryMethod.Run();
             UsageOfAbstractFactory.Run();
             UsageOfBuilder.Run();
+            UsageOfPrototype.Run();
             UsageOfSingleton.Run();
         }
 
