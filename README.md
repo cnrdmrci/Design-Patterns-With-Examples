@@ -17,6 +17,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Builder Design Pattern
   - Prototype Design Pattern
   - Singleton Design Pattern
+  - Object Pool Design Pattern
 - Structural Patterns
 
 - Behavioral Patterns
@@ -66,7 +67,14 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   
 ![image](https://user-images.githubusercontent.com/16361055/79700520-e2d0cd80-829e-11ea-9c6f-2320bd769ec1.png)
 
-> Geliştirme devam ediyor.
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Object Pool Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bazen bir nesnenin aynısından çok fazla oluşturmamız gerekebilir. Örneğin bir oyunda atılan mermileri örnek olarak düşünürsek, mermiler hem devamlı oluşturulacak hem de aynı işlemi görecektir. Ancak her defasında yeni nesne oluşturulması maliyetli olacaktır.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Devamlı kullanılan nesnelerin her defasında tekrar oluşturulma maliyetinden kurtulmak için tasarlanmış olan Object Pool design pattern, oluşturulan ve görevini tamamlamış nesneleri bellekten silmeden bir havuzda saklamaktadır. Ve daha sonra gerektiği yerde bu havuzdan alınması ve kullanılması üzerine işlemler yapılmaktadır.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıda konu ile ilgili UML diagramı bulunmaktadır. Client istemcimiz, oluşturulan havuz ile iletişim kurarak havuza ekleme ve silme işlemleri yapabilmektedir.
+
+![image](https://user-images.githubusercontent.com/16361055/80761590-86459c00-8b43-11ea-91ee-f34cab73d1d7.png)
 
 ### Structural Patterns
 
