@@ -2,6 +2,7 @@
 using DesignPatterns.CreationalPatterns.AbstractFactory;
 using DesignPatterns.CreationalPatterns.Builder;
 using DesignPatterns.CreationalPatterns.FactoryMethod;
+using DesignPatterns.CreationalPatterns.ObjectPool;
 using DesignPatterns.CreationalPatterns.Prototype;
 using DesignPatterns.CreationalPatterns.Singleton;
 
@@ -27,6 +28,7 @@ namespace DesignPatterns
             UsageOfBuilder.Run();
             UsageOfPrototype.Run();
             UsageOfSingleton.Run();
+            UsageOfObjectPool.Run();
         }
 
         static void behavioralPatterns()
