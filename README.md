@@ -18,7 +18,9 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Prototype Design Pattern
   - Singleton Design Pattern
   - Object Pool Design Pattern
+
 - Structural Patterns
+  - Adapter Design Pattern
 
 - Behavioral Patterns
 
@@ -77,6 +79,13 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 ![image](https://user-images.githubusercontent.com/16361055/80761590-86459c00-8b43-11ea-91ee-f34cab73d1d7.png)
 
 ### Structural Patterns
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adapter Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Belirli bir işlemi gerçekleştiren bir interface kullandığımızı varsayalım. Bu interface'in imzasını taşıyan bir çok sınıf olabilmektedir. Ancak benzer görevi gerçekleştiren ve bu interface'nin imzasını taşıyamayan sınıfları kullanmamız gerekir ise hali hazırdaki kodlarımızı değiştirmek yerine; interface ve sınıf arasında bir adapter çeviricisi koyarak etkileşimi sağlamak için bu tasarım deseni kullanılmaktadır.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz sebepten bir adapter kullanma ihtiyacı doğmuştur. IXmlToJson interfacemiz bir imza olarak oluşturulmuştur. Client bu imza ile birlikte XmlToJsonConverter sınıfını kullanarak xml dosyalarını json tipine çevirebilmektedir. Farklı bir yerde kullanılan bir sınıf olan ObjectToJsonConverter sınıfımız var ve bu interface ile kullanılmak istenmektedir. Amaç olarak bu sınıf da Json üretmektedir. Ancak mevcut interface miz ile uyumlu değildir. Bu sebeple bu interface ile bu sınıfı birleştirmek için araya bir adapter koyduk ve başarılı bir şekilde bağlantı kurmuş olduk. Böylece Client her iki sınıfı da kullanabilmektedir.
+
+![image](https://user-images.githubusercontent.com/16361055/81220941-d19bf680-8fea-11ea-8218-8802e953efea.png)
 
 > Geliştirme devam ediyor.
 

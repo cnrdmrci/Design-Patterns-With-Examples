@@ -5,6 +5,7 @@ using DesignPatterns.CreationalPatterns.FactoryMethod;
 using DesignPatterns.CreationalPatterns.ObjectPool;
 using DesignPatterns.CreationalPatterns.Prototype;
 using DesignPatterns.CreationalPatterns.Singleton;
+using DesignPatterns.StructuralPatterns.Adapter;
 
 namespace DesignPatterns
 {
@@ -14,7 +15,7 @@ namespace DesignPatterns
         {
             Console.WriteLine("Program started.");
 
-            creationalPatterns();
+            //creationalPatterns();
             behavioralPatterns();
             structuralPatterns();
 
@@ -38,7 +39,7 @@ namespace DesignPatterns
         
         static void structuralPatterns()
         {
-
+            UsageOfAdapter.Run();
         }
     }
 }
