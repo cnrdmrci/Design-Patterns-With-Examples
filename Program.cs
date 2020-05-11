@@ -6,6 +6,7 @@ using DesignPatterns.CreationalPatterns.ObjectPool;
 using DesignPatterns.CreationalPatterns.Prototype;
 using DesignPatterns.CreationalPatterns.Singleton;
 using DesignPatterns.StructuralPatterns.Adapter;
+using DesignPatterns.StructuralPatterns.Bridge;
 
 namespace DesignPatterns
 {
@@ -39,7 +40,8 @@ namespace DesignPatterns
         
         static void structuralPatterns()
         {
-            UsageOfAdapter.Run();
+            //UsageOfAdapter.Run();
+            UsageOfBridge.Run();
         }
     }
 }
