@@ -21,6 +21,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 - Structural Patterns
   - Adapter Design Pattern
+  - Bridge Design Pattern
 
 - Behavioral Patterns
 
@@ -86,6 +87,14 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz sebepten bir adapter kullanma ihtiyacı doğmuştur. IXmlToJson interfacemiz bir imza olarak oluşturulmuştur. Client bu imza ile birlikte XmlToJsonConverter sınıfını kullanarak xml dosyalarını json tipine çevirebilmektedir. Farklı bir yerde kullanılan bir sınıf olan ObjectToJsonConverter sınıfımız var ve bu interface ile kullanılmak istenmektedir. Amaç olarak bu sınıf da Json üretmektedir. Ancak mevcut interface miz ile uyumlu değildir. Bu sebeple bu interface ile bu sınıfı birleştirmek için araya bir adapter koyduk ve başarılı bir şekilde bağlantı kurmuş olduk. Böylece Client her iki sınıfı da kullanabilmektedir.
 
 ![image](https://user-images.githubusercontent.com/16361055/81220941-d19bf680-8fea-11ea-8218-8802e953efea.png)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bridge Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Belirli bir forma sahip sınıfların farklı implementasyonlarla etkileşiminin ayrı ayrı tanımlanmasından ziyade, köprü misali bir yapı oluşturarak, istenilen sınıfı gereken implementasyonu ile eşleştirerek kullanılan bir tasarım kalıbıdır.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde asıl işlem görecek gerçek sınıflarımız, Document abstract sınıfını kalıtım alan sınıflardır. IDatabase interface'i ise hazırlanan sınıfların ne tür işlem göreceğini belirtmektedir. Rapor ve yazı şeklinde belge hazırladığımızı varsayarsak; hazırlanan belgeleri kaydetmek için mysql veya postgresql veritabanlarından birini seçtiğimizi belirteceğiz. Her işlem gören belge kendi içerisinde hangi veritabanını seçtiğini belirtecek. Aksi halde yapılması gereken, tüm belgelerin ayrı ayrı veritabanlarıyla olan etkileşimine dönüşecektir. Bu kullanımın önüne geçmek için bridge tasarım deseni geliştirilmiştir.
+
+![image](https://user-images.githubusercontent.com/16361055/81976304-01717c80-9631-11ea-8e70-60fae7245e39.png)
+
 
 > Geliştirme devam ediyor.
 
