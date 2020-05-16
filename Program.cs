@@ -9,6 +9,7 @@ using DesignPatterns.StructuralPatterns.Adapter;
 using DesignPatterns.StructuralPatterns.Bridge;
 using DesignPatterns.StructuralPatterns.Composite;
 using DesignPatterns.StructuralPatterns.Decorator;
+using DesignPatterns.StructuralPatterns.Proxy;
 
 namespace DesignPatterns
 {
@@ -45,7 +46,8 @@ namespace DesignPatterns
             //UsageOfAdapter.Run();
             //UsageOfBridge.Run();
             //UsageOfComposite.Run();
-            UsageOfDecorator.Run();
+            //UsageOfDecorator.Run();
+            UsageOfProxy.Run();
         }
     }
 }
