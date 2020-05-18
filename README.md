@@ -24,6 +24,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Bridge Design Pattern
   - Composite Design Pattern
   - Decorator Design Pattern
+  - Proxy Design Pattern
 
 - Behavioral Patterns
 
@@ -110,6 +111,18 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğmiz şekilde bir interface ve bu interface'den kalıtım alan benzer ürünler olarak Laptop ve DesktopPc sınıflarını oluşturulmuştur. Bu benzer nesnelere farklı donanımlar eklemek için aynı interface'i kalıtım alan bir tasarımsal sınıf olarak ComputerDecorator oluşturuldu. Bu tasarımsal sınıfa diğer benzer ürünlerin gönderilmesi ve yeni özellik sınıflarıyla sarmalanmasıyla yeni özellikler kazandırılmaktadır.
 
 ![image](https://user-images.githubusercontent.com/16361055/82237271-0b032900-993e-11ea-8771-dd16cccb9bba.jpg)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Proxy Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir interface'e bağlı olan bir sınıfın, yapacağı işlemi güvenlik, hız vb. nedenlerle farklı bir sınıf aracılığı ile mevcut interface'e bağlı olarak oluşturulması ve kullanılmasıdır.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kullanım çeşitliliği olarak 3'e ayrılır.
+- Remote Proxy : Uzak bir sunucuya erişimde kullanılmak üzere local bir temsilci sağlamaktadır.
+- Virtual Proxy : Oluşturulması maliyetli bir nesnenin oluşturulmasında bir ara temsilci olarak işlem görmektedir. Örneğin web servisten alınan bir verinin cache ile saklanması.
+- Protection Proxy : Bir nesneye oluşturulurken güvenlik vb ön kontrollerin sağlanması için kullanılmaktadır.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz Protection Proxy yöntemini kullanarak bir proxy tasarım kalıbını kullanılmıştır. Database'den veri alınmadan önce nesneyi talep eden kişinin login olup olmadığı kontrolü sağlanmıştır.
+
+![image](https://user-images.githubusercontent.com/16361055/82237535-7baa4580-993e-11ea-941e-3790fe34b9ac.jpg)
 
 > Geliştirme devam ediyor.
 
