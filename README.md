@@ -22,6 +22,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 - Structural Patterns
   - Adapter Design Pattern
   - Bridge Design Pattern
+  - Composite Design Pattern
 
 - Behavioral Patterns
 
@@ -95,6 +96,12 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 ![image](https://user-images.githubusercontent.com/16361055/81976304-01717c80-9631-11ea-8e70-60fae7245e39.png)
 
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Composite Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir grup işlemin alt gruplara ayrılarak, ağaç yapısı şeklinde oluşturulması ve işlenmesi için kullanılan bir tasarım kalıbıdır.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramıda yukarıda bahsettiğimiz şekilde bir ağaç yapısı gösterilmiştir. Bir Manager sınıfımız ve altında başka manager ve depeloper barındırabilecek şekilde ağaç yapısında oluşturuldu. Developer sınıfı ise bir tane ve altında grup barındırmayan bir yapı olarak tasarlandı. Kullanıcı IWorker arayüzünü kullanarak alt alta oluşan tüm grup ve tekil kişilere erişim imkanı sağlamaktadır. Örneğimizde ise en üst kademedeki kişiye toplam çalışma zamanını sorduğumuzda tüm alt yapıları dolaşarak bize toplamı gösterme imkanı sunmaktadır. Böylece karmaşık bir yapıdan ziyade sınıflandırılmış ve kolay işlenebilir bir yapı oluşturulmuştur.
+
+![composite](https://user-images.githubusercontent.com/16361055/82235913-05a4df00-993c-11ea-9551-28a0f466360e.jpg)
 
 > Geliştirme devam ediyor.
 
