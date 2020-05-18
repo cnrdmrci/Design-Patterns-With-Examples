@@ -23,6 +23,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Adapter Design Pattern
   - Bridge Design Pattern
   - Composite Design Pattern
+  - Decorator Design Pattern
 
 - Behavioral Patterns
 
@@ -99,9 +100,16 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Composite Design Pattern
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir grup işlemin alt gruplara ayrılarak, ağaç yapısı şeklinde oluşturulması ve işlenmesi için kullanılan bir tasarım kalıbıdır.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramıda yukarıda bahsettiğimiz şekilde bir ağaç yapısı gösterilmiştir. Bir Manager sınıfımız ve altında başka manager ve depeloper barındırabilecek şekilde ağaç yapısında oluşturuldu. Developer sınıfı ise bir tane ve altında grup barındırmayan bir yapı olarak tasarlandı. Kullanıcı IWorker arayüzünü kullanarak alt alta oluşan tüm grup ve tekil kişilere erişim imkanı sağlamaktadır. Örneğimizde ise en üst kademedeki kişiye toplam çalışma zamanını sorduğumuzda tüm alt yapıları dolaşarak bize toplamı gösterme imkanı sunmaktadır. Böylece karmaşık bir yapıdan ziyade sınıflandırılmış ve kolay işlenebilir bir yapı oluşturulmuştur.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir ağaç yapısı gösterilmiştir. Bir Manager sınıfımız ve altında başka manager ve depeloper barındırabilecek şekilde ağaç yapısında oluşturuldu. Developer sınıfı ise bir tane ve altında grup barındırmayan bir yapı olarak tasarlandı. Kullanıcı IWorker arayüzünü kullanarak alt alta oluşan tüm grup ve tekil kişilere erişim imkanı sağlamaktadır. Örneğimizde ise en üst kademedeki kişiye toplam çalışma zamanını sorduğumuzda tüm alt yapıları dolaşarak bize toplamı gösterme imkanı sunmaktadır. Böylece karmaşık bir yapıdan ziyade sınıflandırılmış ve kolay işlenebilir bir yapı oluşturulmuştur.
 
-![composite](https://user-images.githubusercontent.com/16361055/82235913-05a4df00-993c-11ea-9551-28a0f466360e.jpg)
+![image](https://user-images.githubusercontent.com/16361055/82235913-05a4df00-993c-11ea-9551-28a0f466360e.jpg)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Decorator Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir interface'i kalıtım alan benzer ürün sınıflarının, aynı interface'i kalıtım alan bir tasarımsal sınıf yardımıyla, benzer ürün sınıflarına yeni özellikler kazandırılmasıdır.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğmiz şekilde bir interface ve bu interface'den kalıtım alan benzer ürünler olarak Laptop ve DesktopPc sınıflarını oluşturulmuştur. Bu benzer nesnelere farklı donanımlar eklemek için aynı interface'i kalıtım alan bir tasarımsal sınıf olarak ComputerDecorator oluşturuldu. Bu tasarımsal sınıfa diğer benzer ürünlerin gönderilmesi ve yeni özellik sınıflarıyla sarmalanmasıyla yeni özellikler kazandırılmaktadır.
+
+![image](https://user-images.githubusercontent.com/16361055/82237271-0b032900-993e-11ea-8771-dd16cccb9bba.jpg)
 
 > Geliştirme devam ediyor.
 
