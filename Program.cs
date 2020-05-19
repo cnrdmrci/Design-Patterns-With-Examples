@@ -9,6 +9,7 @@ using DesignPatterns.StructuralPatterns.Adapter;
 using DesignPatterns.StructuralPatterns.Bridge;
 using DesignPatterns.StructuralPatterns.Composite;
 using DesignPatterns.StructuralPatterns.Decorator;
+using DesignPatterns.StructuralPatterns.Facade;
 using DesignPatterns.StructuralPatterns.FlyWeight;
 using DesignPatterns.StructuralPatterns.Proxy;
 
@@ -21,8 +22,8 @@ namespace DesignPatterns
             Console.WriteLine("Program started.");
 
             //creationalPatterns();
+            //structuralPatterns();
             behavioralPatterns();
-            structuralPatterns();
 
             Console.WriteLine("Program finished.");
         }
@@ -44,12 +45,13 @@ namespace DesignPatterns
         
         static void structuralPatterns()
         {
-            //UsageOfAdapter.Run();
-            //UsageOfBridge.Run();
-            //UsageOfComposite.Run();
-            //UsageOfDecorator.Run();
-            //UsageOfProxy.Run();
+            UsageOfAdapter.Run();
+            UsageOfBridge.Run();
+            UsageOfComposite.Run();
+            UsageOfDecorator.Run();
+            UsageOfProxy.Run();
             UsageOfFlyWeight.Run();
+            UsageOfFacade.Run();
         }
     }
 }
