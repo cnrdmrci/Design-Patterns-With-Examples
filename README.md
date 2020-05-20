@@ -25,6 +25,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Composite Design Pattern
   - Decorator Design Pattern
   - Facade Design Pattern
+  - FlyWeight Design Pattern
   - Proxy Design Pattern
 
 - Behavioral Patterns
@@ -109,16 +110,23 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Decorator Design Pattern
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir interface'i kalıtım alan benzer ürün sınıflarının, aynı interface'i kalıtım alan bir tasarımsal sınıf yardımıyla, benzer ürün sınıflarına yeni özellikler kazandırılmasıdır.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğmiz şekilde bir interface ve bu interface'den kalıtım alan benzer ürünler olarak Laptop ve DesktopPc sınıflarını oluşturulmuştur. Bu benzer nesnelere farklı donanımlar eklemek için aynı interface'i kalıtım alan bir tasarımsal sınıf olarak ComputerDecorator oluşturuldu. Bu tasarımsal sınıfa diğer benzer ürünlerin gönderilmesi ve yeni özellik sınıflarıyla sarmalanmasıyla yeni özellikler kazandırılmaktadır.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir interface ve bu interface'den kalıtım alan benzer ürünler olarak Laptop ve DesktopPc sınıflarını oluşturulmuştur. Bu benzer nesnelere farklı donanımlar eklemek için aynı interface'i kalıtım alan bir tasarımsal sınıf olarak ComputerDecorator oluşturuldu. Bu tasarımsal sınıfa diğer benzer ürünlerin gönderilmesi ve yeni özellik sınıflarıyla sarmalanmasıyla yeni özellikler kazandırılmaktadır.
 
 ![image](https://user-images.githubusercontent.com/16361055/82237271-0b032900-993e-11ea-8771-dd16cccb9bba.jpg)
 
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Facade Design Pattern
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir istemcinin bir grup işlemi yapmak için, bir sınıf ile iletişim kurarak ve bu sınıfın ne yaptığına bakmadan sonucunu istemesidir. İletişim kurulan sınıf alt sınıflarla iletişim kurarak kendi içerisinde bir grup işlemi tamamlamakta ve istemciye dönmektedir. Bu şekilde istemci detaylarla ilgilenmeden istediği sonuca ulaşmaktadır.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğmiz şekilde istemcinin iletişim kurması ve bir grup işlemi yaptırıp, sonucunu alabilmesi için bir adet Reporting adında bir raporlama facade sınıfı oluşturulmuştur. Bu sınıf verilen isme göre kendi içerisinde veritabanından ilgili veriyi okumakta, rapor oluşturmakta ve bu oluşturulan sınıfı mail olarak göndermektedir. Reporting facade sınıfımız dönüş objesi olarak yapılan işlemlerin loglarını dönmektedir. Böylece istemci Reporting facade sınıfına sadece kişi ismini bilgirerek, yapılan işlemleri bilme gereği duymadan, işlemlerini tamamlayacaktır.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde istemcinin iletişim kurması ve bir grup işlemi yaptırıp, sonucunu alabilmesi için bir adet Reporting adında bir raporlama facade sınıfı oluşturulmuştur. Bu sınıf verilen isme göre kendi içerisinde veritabanından ilgili veriyi okumakta, rapor oluşturmakta ve bu oluşturulan sınıfı mail olarak göndermektedir. Reporting facade sınıfımız dönüş objesi olarak yapılan işlemlerin loglarını dönmektedir. Böylece istemci Reporting facade sınıfına sadece kişi ismini bilgirerek, yapılan işlemleri bilme gereği duymadan, işlemlerini tamamlayacaktır.
 
 ![image](https://user-images.githubusercontent.com/16361055/82492439-e13d3400-9aee-11ea-80f7-42ac2931059b.jpg)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FlyWeight Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kaynak tüketiminin en aza indirilmesi amaçlanarak, nesnelerin bir fabrika içerisinde oluşturulması ve daha sonra kullanımak üzere bu oluşturulan nesnelerin fabrika aracılığıyla birden fazla istemci tarafından aynı anda kullanılması için tasarlanan bir kalıptır.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde, ShapeFactory adında nesne oluşturan ve sonradan kullanılmak üzere bu oluşturulan nesneleri saklayan bir fabrika sınıfı oluşturulmuştur. İstemci Rectangular veya Square sınıflarını bir kez çağırdığında fabrikada saklanmakta ve tekrar istendiğinde veya farklı istemciler tarafında aynı anda istenildiğinde mevcut nesne kullanıma sunulmaktadır. Böylece tek bir nesne ile tüm işlemler yapılmakta ve kaynak tüketimi en aza indirgenmektedir.
+
+![image](https://user-images.githubusercontent.com/16361055/82496309-30866300-9af5-11ea-8614-b3f62296f711.jpg)
 
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Proxy Design Pattern
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir interface'e bağlı olan bir sınıfın, yapacağı işlemi güvenlik, hız vb. nedenlerle farklı bir sınıf aracılığı ile mevcut interface'e bağlı olarak oluşturulması ve kullanılmasıdır.
