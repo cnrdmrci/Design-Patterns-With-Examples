@@ -140,7 +140,6 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 ![image](https://user-images.githubusercontent.com/16361055/82237535-7baa4580-993e-11ea-941e-3790fe34b9ac.jpg)
 
-> Geliştirme devam ediyor.
 
 ### Behavioral Patterns
 
