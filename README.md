@@ -29,6 +29,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Proxy Design Pattern
 
 - Behavioral Patterns
+  - Chain Of Responsibility Design Pattern
 
 - Other Patterns
 
@@ -142,6 +143,13 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 
 ### Behavioral Patterns
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chain Of Responsibility Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir işlemi gerçekleştirmek için yapılan; sıralı işlemleri veya if else if blokları şeklinde oluşturulan algoritmaları zincir şeklindeki bir model ile her nesneyi bir sonraki nesneye bağlayarak bağımlılığı gideren ve her nesnenin kendisine tanımlı işi yapmasını sağlayan bir tasarım desenidir.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde 4 işlem(Toplama, Çıkarma, Çarpma, Bölme) yapan sınıfların bir zincir şeklinde, her nesnenin bir sonraki nesneye bağlanmasıyla Chain of Responbitility tasarım deneni uygulanmıştır. Zincir sıralama işlemi, istemci tarafından belirtilerek, hangi sıra ile devam edeceğini bildirmektedir. İlgili sırada belirtilen işlemi yapacak herhangi bir sınıf bulunamazsa, zincirin sonucu olarak null dönmektedir.
+
+![image](https://user-images.githubusercontent.com/16361055/82717527-4d619880-9ca5-11ea-8f42-cf0534931f73.jpg)
 
 > Geliştirme devam ediyor.
 
