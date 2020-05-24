@@ -30,6 +30,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 - Behavioral Patterns
   - Chain Of Responsibility Design Pattern
+  - Command Design Pattern
 
 - Other Patterns
 
@@ -150,6 +151,13 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde 4 işlem(Toplama, Çıkarma, Çarpma, Bölme) yapan sınıfların bir zincir şeklinde, her nesnenin bir sonraki nesneye bağlanmasıyla Chain of Responbitility tasarım deneni uygulanmıştır. Zincir sıralama işlemi, istemci tarafından belirtilerek, hangi sıra ile devam edeceğini bildirmektedir. İlgili sırada belirtilen işlemi yapacak herhangi bir sınıf bulunamazsa, zincirin sonucu olarak null dönmektedir.
 
 ![image](https://user-images.githubusercontent.com/16361055/82717527-4d619880-9ca5-11ea-8f42-cf0534931f73.jpg)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Command Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir olayı gerçekleştirmek için yapılması gereken işlemlerin bir nesne içerisinde yerleştirilerek, başka bir nesne aracılığı ile alıcıya ulaştırılmasıdır. Burada taşıyıcı nesnenin taşıdığı nesnenin içerisindeki bilginin ne olduğunu bilmesine gerek yoktur. İşlemin yapılma emrini veren kişi ile işlemi yapacak olan kişi arasına bir aracı koyarak bağımlılıkları azaltmak hedeflenmiştir. Ayrıca verilen komutların bir kaydı tutularak, yapılan işlemleri geri alma veya ileri alma işlemleri kolaylıkla yapılabilmektedir.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir metin editörü oluşturulmuştur. Bu oluşturulan metin editöründe işlem yapabilmek için karakter girme ve karakter silme sınıfları hazırlanmıştır. Metin editörünün kullanılması için emri gönderen nesne olan klavye girişi sınıfı oluşturulmuş ve bu klavye girişi sınıfı ile metin editörü sınıfı arasına bir komut taşıyıcı olarak karakter girme ve karakter silme sınıfları eklenmiştir. Böylece bu aradaki komut taşıyıcısındaki işlemleri her adımda kaydederek yapılan işlemlerin tersini uygulayabilme, geri alabilme ve ileri alabilme işlemleri gerçekleştirilmiştir.
+
+![image](https://user-images.githubusercontent.com/16361055/82753594-7120fd80-9dcf-11ea-8910-2c4a6be56d28.jpg)
 
 > Geliştirme devam ediyor.
 
