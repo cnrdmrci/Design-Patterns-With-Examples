@@ -1,6 +1,7 @@
 ﻿using System;
 using DesignPatterns.BehavioralPatterns.ChainOfResponsibility;
 using DesignPatterns.BehavioralPatterns.Command;
+using DesignPatterns.BehavioralPatterns.Interpreter;
 using DesignPatterns.CreationalPatterns.AbstractFactory;
 using DesignPatterns.CreationalPatterns.Builder;
 using DesignPatterns.CreationalPatterns.FactoryMethod;
@@ -43,7 +44,8 @@ namespace DesignPatterns
         static void behavioralPatterns()
         {
             //UsageOfChainOfResponsibility.Run();
-            UsageOfCommand.Run();
+            //UsageOfCommand.Run();
+            UsageOfInterpreter.Run();
         }
         
         static void structuralPatterns()
