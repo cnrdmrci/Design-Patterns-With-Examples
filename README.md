@@ -31,6 +31,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 - Behavioral Patterns
   - Chain Of Responsibility Design Pattern
   - Command Design Pattern
+  - Interpreter Design Pattern
 
 - Other Patterns
 
@@ -158,6 +159,13 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir metin editörü oluşturulmuştur. Bu oluşturulan metin editöründe işlem yapabilmek için karakter girme ve karakter silme sınıfları hazırlanmıştır. Metin editörünün kullanılması için emri gönderen nesne olan klavye girişi sınıfı oluşturulmuş ve bu klavye girişi sınıfı ile metin editörü sınıfı arasına bir komut taşıyıcı olarak karakter girme ve karakter silme sınıfları eklenmiştir. Böylece bu aradaki komut taşıyıcısındaki işlemleri her adımda kaydederek yapılan işlemlerin tersini uygulayabilme, geri alabilme ve ileri alabilme işlemleri gerçekleştirilmiştir.
 
 ![image](https://user-images.githubusercontent.com/16361055/82753594-7120fd80-9dcf-11ea-8910-2c4a6be56d28.jpg)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Interpreter Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Interpreter(Yorumlayıcı) tasarım deseni bir düzene sahip olan metin durumdaki verileri işleyerek yorumlama veya çevirme işlemleri gerçekleştirmektedir. Örnek olarak metin olarak verilen roma rakamlarının sayısal bir ifadeye çevrilmesinde kullanılabilinmektedir. MCCL şeklindeki bir girdinin, 1250 sayısal değeri şeklinde çıkması sağlanabilinmektedir. Burada tasarım kalıbının üstlendiği görev, metin verisinin teker teker işlenmesi ile anlamlı bir sonuç elde etme işlemidir.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde, postfix işleminin yorumlanması ve anlamlı bir sonuç üretmesi üzerine bir program hazırlanmıştır. Örnek olarak verilen '10 44 23 19 - - +' postfix ifadesinin işlenmesi 2 kısım olarak ele alınmıştır. 'Terminated' olarak ifade edilen sayıları alan kısım ve 'NonTerminated' olarak ifade edilen sayıları yorumlayan kısımdır. Program içerisinde işlem sıralarını belirleyerek non terminated kısımlar toplama veya çıkarma işlemlerini gerçekleştirmekte ve 50 sonucunu üretmektedir. Bu şekilde farklı algoritmalarla farklı metinleri de aynı şekilde işleme sokabiliriz.
+
+![image](https://user-images.githubusercontent.com/16361055/83047253-c586e000-a050-11ea-83c6-f2005fd64b48.jpg)
 
 > Geliştirme devam ediyor.
 
