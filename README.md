@@ -32,6 +32,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Chain Of Responsibility Design Pattern
   - Command Design Pattern
   - Interpreter Design Pattern
+  - Iterator Design Pattern
 
 - Other Patterns
 
@@ -166,6 +167,13 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde, postfix işleminin yorumlanması ve anlamlı bir sonuç üretmesi üzerine bir program hazırlanmıştır. Örnek olarak verilen '10 44 23 19 - - +' postfix ifadesinin işlenmesi 2 kısım olarak ele alınmıştır. 'Terminated' olarak ifade edilen sayıları alan kısım ve 'NonTerminated' olarak ifade edilen sayıları yorumlayan kısımdır. Program içerisinde işlem sıralarını belirleyerek non terminated kısımlar toplama veya çıkarma işlemlerini gerçekleştirmekte ve 50 sonucunu üretmektedir. Bu şekilde farklı algoritmalarla farklı metinleri de aynı şekilde işleme sokabiliriz.
 
 ![image](https://user-images.githubusercontent.com/16361055/83047253-c586e000-a050-11ea-83c6-f2005fd64b48.jpg)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Iterator Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Interator tasarım deseninin mantığı; bir listenin elemanları üzerinde teker teker işlem yapma ve listenin sonuna gelindiğinde bu durumu belirtme olarak tanımlayabiliriz. Günlük hayatta kullandığımız foreach yapısı, iterator tasarım kalıbını kullanan bir örnek olarak verilebilir. Listenin elemanlarını teker teker dolaşarak işlem yapma olanağı sağlamakta ve listenin sonuna gelindiğinde döngüden çıkmaktadır.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir IIterator interface'ini ve yapacağı işlemleri imza olarak alan bir Iterator sınıfı ve bu sınıfı oluşturan IIteratorCreator interface'inin imzasını alan IteratorCreator sınıfı, bir liste alarak IIterator listesi dönmektedir. Bu liste içerisindeki 'HasNextElement' methodu while içerisinde çağırıldığı her adımda mevcut nesneyi veren 'CurrentElement' nesnesini her adımda bir sonraki nesne olarak güncelleyecektir. Bu listenin sonuna gelindiğinde 'HasNextElement' methodu false döneceğinden döngüden çıkılacaktır. Bu şekilde foreach yapısınının bir benzeri olarak iterator tasarım kalıbı uygulanmıştır.
+
+![image](https://user-images.githubusercontent.com/16361055/83192548-60111d00-a13e-11ea-964c-d2052d707f40.jpg)
 
 > Geliştirme devam ediyor.
 
