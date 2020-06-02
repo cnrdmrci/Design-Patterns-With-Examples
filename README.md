@@ -33,6 +33,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Command Design Pattern
   - Interpreter Design Pattern
   - Iterator Design Pattern
+  - Mediator Design Pattern
 
 - Other Patterns
 
@@ -174,6 +175,13 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir IIterator interface'ini ve yapacağı işlemleri imza olarak alan bir Iterator sınıfı ve bu sınıfı oluşturan IIteratorCreator interface'inin imzasını alan IteratorCreator sınıfı, bir liste alarak IIterator listesi dönmektedir. Bu liste içerisindeki 'HasNextElement' methodu while içerisinde çağırıldığı her adımda mevcut nesneyi veren 'CurrentElement' nesnesini her adımda bir sonraki nesne olarak güncelleyecektir. Bu listenin sonuna gelindiğinde 'HasNextElement' methodu false döneceğinden döngüden çıkılacaktır. Bu şekilde foreach yapısınının bir benzeri olarak iterator tasarım kalıbı uygulanmıştır.
 
 ![image](https://user-images.githubusercontent.com/16361055/83192548-60111d00-a13e-11ea-964c-d2052d707f40.jpg)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mediator Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mediator tasarım kalıbı objeler arası iletişim karmaşıklığını gidermek amacıyla, ortak bir iletişim nesnesi ile iletişim kurulması üzerine tasarlanmıştır. Örneğin havalimanındaki uçaklarla haberleşen kule bu tasarım kalıbına örnektir. Uçakların aracısız birbiriyle haberleşmesi, iniş ve kalkış durumlarında yoğunluktan karmaşık bir durum alacaktır. Ancak kule üzerinden hangi uçağın kalkış, hangi uçağın iniş yapacağı bilgisi düzenlenerek her uçak bu bilgiyi kuleden ister ise bir düzen oluşacaktır.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde şirket içi çalışanların haberleşmesini sağlayan bir mesajlaşma uygulaması örneği verilmiştir. Bu örnekte bir yazılımcı sınıfı ve bir de stajyer sınıfı bulunmaktadır. Her çalışan mesajlaşma uygulamasına kayıt oluşturarak diğer kullanıcılara bu uygulama üzerinden mesaj gönderebilecektir. Burada iletişim aracı olarak mediator nesnesi üzerinden haberleşme sağlanarak mesajlaşma yapılmıştır. Yani bir kişi mesajlaşma uygulaması ile çalışma arkadaşlarına bir mesaj göndermek isteseydi, uygulamaya kayıtlı tüm kişilere bu mesajı göndermesi gerekirdi. Ancak metiator nesnesine bu mesajın herkese gönderileceğini belirterek, tek bir komut ile herkese gönderim sağlamaktadır.
+
+![image](https://user-images.githubusercontent.com/16361055/83569336-fc676500-a52c-11ea-9943-94cc57f5bf29.jpg)
 
 > Geliştirme devam ediyor.
 
