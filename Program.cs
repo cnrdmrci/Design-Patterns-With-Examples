@@ -3,6 +3,7 @@ using DesignPatterns.BehavioralPatterns.ChainOfResponsibility;
 using DesignPatterns.BehavioralPatterns.Command;
 using DesignPatterns.BehavioralPatterns.Interpreter;
 using DesignPatterns.BehavioralPatterns.Iterator;
+using DesignPatterns.BehavioralPatterns.Mediator;
 using DesignPatterns.CreationalPatterns.AbstractFactory;
 using DesignPatterns.CreationalPatterns.Builder;
 using DesignPatterns.CreationalPatterns.FactoryMethod;
@@ -47,7 +48,8 @@ namespace DesignPatterns
             //UsageOfChainOfResponsibility.Run();
             //UsageOfCommand.Run();
             //UsageOfInterpreter.Run();
-            UsageOfIterator.Run();
+            //UsageOfIterator.Run();
+            UsageOfMediator.Run();
         }
         
         static void structuralPatterns()
