@@ -6,6 +6,7 @@ using DesignPatterns.BehavioralPatterns.Iterator;
 using DesignPatterns.BehavioralPatterns.Mediator;
 using DesignPatterns.BehavioralPatterns.Memento;
 using DesignPatterns.BehavioralPatterns.Observer;
+using DesignPatterns.BehavioralPatterns.State;
 using DesignPatterns.CreationalPatterns.AbstractFactory;
 using DesignPatterns.CreationalPatterns.Builder;
 using DesignPatterns.CreationalPatterns.FactoryMethod;
@@ -53,7 +54,8 @@ namespace DesignPatterns
             //UsageOfIterator.Run();
             //UsageOfMediator.Run();
             //UsageOfMemento.Run();
-            UsageOfObserver.Run();
+            //UsageOfObserver.Run();
+            UsageOfState.Run();
         }
         
         static void structuralPatterns()
