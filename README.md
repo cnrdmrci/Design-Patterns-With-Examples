@@ -34,6 +34,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Interpreter Design Pattern
   - Iterator Design Pattern
   - Mediator Design Pattern
+  - Memento Design Pattern
 
 - Other Patterns
 
@@ -182,6 +183,13 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde şirket içi çalışanların haberleşmesini sağlayan bir mesajlaşma uygulaması örneği verilmiştir. Bu örnekte bir yazılımcı sınıfı ve bir de stajyer sınıfı bulunmaktadır. Her çalışan mesajlaşma uygulamasına kayıt oluşturarak diğer kullanıcılara bu uygulama üzerinden mesaj gönderebilecektir. Burada iletişim aracı olarak mediator nesnesi üzerinden haberleşme sağlanarak mesajlaşma yapılmıştır. Yani bir kişi mesajlaşma uygulaması ile çalışma arkadaşlarına bir mesaj göndermek isteseydi, uygulamaya kayıtlı tüm kişilere bu mesajı göndermesi gerekirdi. Ancak metiator nesnesine bu mesajın herkese gönderileceğini belirterek, tek bir komut ile herkese gönderim sağlamaktadır.
 
 ![image](https://user-images.githubusercontent.com/16361055/83569336-fc676500-a52c-11ea-9943-94cc57f5bf29.jpg)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Memento Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Memento tasarım kalıbı, bir nesnenin belirli bir anda ve belirtilen alanlarının kaydını saklayarak, istenilen zamanda bu kayıtların geri yüklenmesini sağlamaktadır. Bu şekilde işlemler gerçekleştirerek nesnenin önceki veya sonraki kayıtlarının saklanmasını mümkün kılmaktadır
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir oyun alt yapısı tasarlanmıştır. Game nesnesi oyunu oluşturan kod parçacığı olarak görev yapmaktadır. Oyunda bölümleri tamamlayarak bir sonraki seviyeye geçme üzerine kurulu bir sistem oluşturulmuştur. CareTaker denilen farklı bir kod parçacığı da Game nesnesi üzerinde işlemler gerçekleştiren bir yardımcı sınıfımız olarak oluşturulmuştur. Bu yardımcı nesneye belirli bir levelde kayıt almasını söylediğimizde, Game nesnesindeki kayıt methodunu çağırarak gerekli alanların kaydını saklamaktadır. Game nesnesinden oyuna devam ederek farklı levellere eriştiğimizde, kaydını aldığımız bölüme geri dönüş yapmak için yardımcı sınıfımıza bizi kaydın alındığı levele geri götürmesi bildirebilmekteyiz. Böylelikle herhangi bir zamanda aldığımız kaydı, istediğimiz zaman geri yükleyebilmekteyiz. 
+
+![image](https://user-images.githubusercontent.com/16361055/84943142-9b26c080-b0ec-11ea-8162-80f3d149b474.jpg)
 
 > Geliştirme devam ediyor.
 
