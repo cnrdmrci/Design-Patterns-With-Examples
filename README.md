@@ -35,6 +35,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Iterator Design Pattern
   - Mediator Design Pattern
   - Memento Design Pattern
+  - Observer Design Pattern
 
 - Other Patterns
 
@@ -190,6 +191,13 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir oyun alt yapısı tasarlanmıştır. Game nesnesi oyunu oluşturan kod parçacığı olarak görev yapmaktadır. Oyunda bölümleri tamamlayarak bir sonraki seviyeye geçme üzerine kurulu bir sistem oluşturulmuştur. CareTaker denilen farklı bir kod parçacığı da Game nesnesi üzerinde işlemler gerçekleştiren bir yardımcı sınıfımız olarak oluşturulmuştur. Bu yardımcı nesneye belirli bir levelde kayıt almasını söylediğimizde, Game nesnesindeki kayıt methodunu çağırarak gerekli alanların kaydını saklamaktadır. Game nesnesinden oyuna devam ederek farklı levellere eriştiğimizde, kaydını aldığımız bölüme geri dönüş yapmak için yardımcı sınıfımıza bizi kaydın alındığı levele geri götürmesi bildirebilmekteyiz. Böylelikle herhangi bir zamanda aldığımız kaydı, istediğimiz zaman geri yükleyebilmekteyiz. 
 
 ![image](https://user-images.githubusercontent.com/16361055/84943142-9b26c080-b0ec-11ea-8162-80f3d149b474.jpg)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Observer Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Observer tasarım kalıbı, bir sunucuda gerçekleşen herhangi bir olayın, gerçekleştiği anda sunucunun istemcilere bildirmesi olarak tanımlanabilmektedir. İstemcilerin devamlı sunucuya giderek olay gerçekleşti mi diye sormasından ziyade, sunucunun istemcileri olayın gerçekleştiğinde haberdar etmesidir.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir sunucu ve istemciler oluşturulmuştur. Sunucumuz hava sıcaklığı bilgisini sağlamaktadır. İstemciler ise sıcaklığı gösteren birer termometre olarak görev almaktadır. Hava sıcaklığı değiştiğinde sunucu istemcilere, hava sıcaklığının değiştiğini bildirmektedir. İstemciler sunucuya gidip hava sıcaklığı değişti mi diye sormamaktadır. Sunucu tarafından bilgilendirilmektedirler.
+
+![image](https://user-images.githubusercontent.com/16361055/85059213-efdd4080-b1ab-11ea-9e1b-8ccbb3684922.jpg)
 
 > Geliştirme devam ediyor.
 
