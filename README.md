@@ -36,6 +36,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Mediator Design Pattern
   - Memento Design Pattern
   - Observer Design Pattern
+  - State Design Pattern
 
 - Other Patterns
 
@@ -198,6 +199,13 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir sunucu ve istemciler oluşturulmuştur. Sunucumuz hava sıcaklığı bilgisini sağlamaktadır. İstemciler ise sıcaklığı gösteren birer termometre olarak görev almaktadır. Hava sıcaklığı değiştiğinde sunucu istemcilere, hava sıcaklığının değiştiğini bildirmektedir. İstemciler sunucuya gidip hava sıcaklığı değişti mi diye sormamaktadır. Sunucu tarafından bilgilendirilmektedirler.
 
 ![image](https://user-images.githubusercontent.com/16361055/85059213-efdd4080-b1ab-11ea-9e1b-8ccbb3684922.jpg)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; State Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; State tasarım kalıbı, nesnenin farklı durumlarda farklı davranışlar sergilemesini sağlamaktadır. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir klima için bir takım komutlar oluşturulmuştur ve klima için 2 adet durum tanımlanmıştır. Bunlar klimanın açık olma ve kapalı olma durumudur. Klima nesnesi ilk oluşturulduğunda kapalı durumda oluşturulmaktadır. Nesneye açılma komutunu verdiğimizde, açık durumuna geçecektir ve açıldığında sıcak veya soğuk hava vermesini söyleyebilmekteyiz. Kapalı olduğu durumda sıcak veya soğuk hava vermesini söylediğimizde bizde klimanın ilk önce açık durumuna getirilmesini söylemektedir. Bu şekilde her durumda farklı işlemler gerçekleştirerek farklı durumlar ortaya çıkarılmıştır.
+
+![image](https://user-images.githubusercontent.com/16361055/85065122-4ef38300-b1b5-11ea-9583-a7bf0255fc37.jpg)
 
 > Geliştirme devam ediyor.
 
