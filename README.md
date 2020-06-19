@@ -37,6 +37,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Memento Design Pattern
   - Observer Design Pattern
   - State Design Pattern
+  - Strategy Design Pattern
 
 - Other Patterns
 
@@ -206,6 +207,13 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir klima için bir takım komutlar oluşturulmuştur ve klima için 2 adet durum tanımlanmıştır. Bunlar klimanın açık olma ve kapalı olma durumudur. Klima nesnesi ilk oluşturulduğunda kapalı durumda oluşturulmaktadır. Nesneye açılma komutunu verdiğimizde, açık durumuna geçecektir ve açıldığında sıcak veya soğuk hava vermesini söyleyebilmekteyiz. Kapalı olduğu durumda sıcak veya soğuk hava vermesini söylediğimizde bizde klimanın ilk önce açık durumuna getirilmesini söylemektedir. Bu şekilde her durumda farklı işlemler gerçekleştirerek farklı durumlar ortaya çıkarılmıştır.
 
 ![image](https://user-images.githubusercontent.com/16361055/85065122-4ef38300-b1b5-11ea-9583-a7bf0255fc37.jpg)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Strategy Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Strategy tasarım kalıbı, bir işlemin farklı algoritmalarla gerçekleştirilmesini sağlamaktadır.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz gibi, bir metni şifrelen program yazılmıştır. Hazırlanan programda mevcut metnin şifrelenmesi ve bu şifreli metnin çözülmesi durumları oluşturulmuştur. Programın şifrelemede kullandığı birbirinden farklı şifreleme algoritmaları için; belirli bir düzende tasarım oluşturularak, isteğe göre algoritma değişimleri ve yeni algoritma eklemeleri yapılabilmektedir.
+
+![image](https://user-images.githubusercontent.com/16361055/85184402-635c7c00-b298-11ea-8f09-577bc23d5ec7.jpg)
 
 > Geliştirme devam ediyor.
 
