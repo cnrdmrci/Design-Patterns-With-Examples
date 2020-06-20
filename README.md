@@ -39,6 +39,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - State Design Pattern
   - Strategy Design Pattern
   - Template Method Design Pattern
+  - Visitor Design Pattern
 
 - Other Patterns
 
@@ -223,7 +224,13 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 ![image](https://user-images.githubusercontent.com/16361055/85200062-fdeea680-b2fc-11ea-876c-e6695a6c83d3.jpg)
 
-> Geliştirme devam ediyor.
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Visitor Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Belirli bir işlemi yerine getiren koda yeni bir özellik eklemek istenildiğinde bazı engeller ortaya çıkabilmektedir. Örneğin test edilmiş ve aktif olarak çalışan kodun değiştirilmesi her zaman mümkün olmadığından dolayı, eklenecek yeni özelliğin ayrı bir modül olarak eklenmesi gerekmektedir. Mevcut programımızın nesnesini, ek olarak eklediğimiz modülümüze ziyaretçi olarak göndererek işlemlerimizi gerçekleştirebilmekteyiz.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz gibi bir tasarım uygulanmıştır. Hazırlanan programda istenilen yemeklerin fiyatlarını gösterdiğimiz bir uygulama oluşturulmuştur. Fiyatlara ek olarak vergilendirme fiyatının eklenmesi istenmiştir. Ancak programımızın içerisine vergilendirme modülünü eklememiz hem tek sorumluluk prensibini çiğneyecektir, hem de kodun tekrardan test edilmesi gibi uzun bir sonuç oluşturacaktır. Bu soruna çözüm olarak vergilendirme modülünü ayrı bir modül olarak hazırlamakta ve programımızın nesnesini ziyaretçi olarak yeni modüle göndermekteyiz. Bu şekilde nesnemiz ziyaretçi olarak gittiği sınıf içerisinde ek vergilendirme işlemlerini uygulayarak, fiyat arttırma işlemini gerçekleştirmektedir.
+
+![image](https://user-images.githubusercontent.com/16361055/85203640-cb05dc00-b317-11ea-8c28-39953754f037.jpg)
+
 
 ### Other Patterns
 
