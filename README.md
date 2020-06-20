@@ -38,6 +38,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - Observer Design Pattern
   - State Design Pattern
   - Strategy Design Pattern
+  - Template Method Design Pattern
 
 - Other Patterns
 
@@ -211,9 +212,16 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Strategy Design Pattern
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Strategy tasarım kalıbı, bir işlemin farklı algoritmalarla gerçekleştirilmesini sağlamaktadır.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz gibi, bir metni şifrelen program yazılmıştır. Hazırlanan programda mevcut metnin şifrelenmesi ve bu şifreli metnin çözülmesi durumları oluşturulmuştur. Programın şifrelemede kullandığı birbirinden farklı şifreleme algoritmaları için; belirli bir düzende tasarım oluşturularak, isteğe göre algoritma değişimleri ve yeni algoritma eklemeleri yapılabilmektedir.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz gibi, bir metni şifreleyen program yazılmıştır. Hazırlanan programda mevcut metnin şifrelenmesi ve bu şifreli metnin çözülmesi durumları oluşturulmuştur. Programın şifrelemede kullandığı birbirinden farklı şifreleme algoritmaları için; belirli bir düzende tasarım oluşturularak, isteğe göre algoritma değişimleri ve yeni algoritma eklemeleri yapılabilmektedir.
 
 ![image](https://user-images.githubusercontent.com/16361055/85184402-635c7c00-b298-11ea-8f09-577bc23d5ec7.jpg)
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Template Method Design Pattern
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Template Method tasarım kalıbı, birkaç adımdan oluşan sıralı işlemlerin gerçekleştirildiği bir temel sınıf tanımlanması ve bu sıralı işlemlerin belirli kısımları hariç değiştirilemez bir akış oluşturulmasıdır. Değiştirilebilecek kısımlar farklı sınıflara kalıtım verilerek, yeni algoritmalarla akış tamamlanabilmektedir.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz gibi bir temel sınıf oluşturulmuştur. Bu temel sınıf içerisinde bulunan Template Method, program içerisindeki akışı baştan sona çalıştıran bir fonksiyondur. Akış içerisinde belirli kısımlar farklı algoritmalarla doldurulması için boş bırakılmıştır. Temel sınıfımız abstract olduğu için tek başına çalıştırılamayacaktır ve bir sınıfa kalıtım vererek gerekli fonksiyonların doldurulması sağlanmaktadır.
+
+![image](https://user-images.githubusercontent.com/16361055/85200062-fdeea680-b2fc-11ea-876c-e6695a6c83d3.jpg)
 
 > Geliştirme devam ediyor.
 
