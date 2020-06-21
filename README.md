@@ -1,13 +1,13 @@
 # Örneklerle Tasarım Desenleri (Design Patterns)
 
 ### Design Pattern Nedir?
-Design Pattern, bir yazılımı en iyi şekilde geliştirmek için geçmiş sorunlardan edinilmiş tecrübeler ile harmanlanarak, üzerine düşünülmüş, esneklik, kolaylık ve sürdürülebilirlik sağlayan yazılım tasarımlarıdır diyebiliriz.
+Design Pattern, bir yazılımı en iyi şekilde geliştirmek için, geçmiş sorunlardan edinilmiş tecrübeler ile harmanlanarak, üzerine düşünülmüş, esneklik, kolaylık ve sürdürülebilirlik sağlayan yazılım tasarımlarıdır diyebiliriz.
 
-Nesneye yönelimli programlama ve UML diagramlarıyla beraber hayatımıza tam olarak giren design patternler, yazılım dünyasında belirli işlemlerin devamlı tekrarlanmasından kaynaklı bir standarda bağlanmıştır.
+Nesneye yönelimli programlama ve UML diagramlarıyla beraber hayatımıza tam olarak giren tasarım kalıpları, yazılım dünyasında belirli işlemlerin devamlı tekrarlanmasından kaynaklı bir standarda bağlanmıştır.
 
-Gang of Four olarak bilinen: Eric Gamma, Richard Helm, Ralph Johnson ve John Vlissides isimli yazarların, "Design Patterns : Elements of Reusable Object – Oriented Software" kitabını çıkarttılar. Bu kitapta 3 kategori olmak üzere 23 farklı tasarım kalıbına yer vermişlerdir. 
+Gang of Four olarak bilinen: Eric Gamma, Richard Helm, Ralph Johnson ve John Vlissides isimli yazarlar, "Design Patterns : Elements of Reusable Object – Oriented Software" kitabını çıkarttılar. Bu kitapta 3 kategori olmak üzere 23 farklı tasarım kalıbına yer vermişlerdir. 
 
-Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farklı tasarım kalıplarını da işleyeceğiz.
+Bu projede, 3 kategorideki tüm tasarım kalıpları örneklerle incelenmiştir.
 
 ### Projede Anlatılan Tasarım Kalıpları (Design Patterns) 
 
@@ -19,27 +19,27 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
   - [Singleton Design Pattern](#singleton-design-pattern)
   - [Object Pool Design Pattern](#object-pool-design-pattern)
 
-- Structural Patterns
-  - Adapter Design Pattern
-  - Bridge Design Pattern
-  - Composite Design Pattern
-  - Decorator Design Pattern
-  - Facade Design Pattern
-  - FlyWeight Design Pattern
-  - Proxy Design Pattern
+- [Structural Patterns](#structural-patterns)
+  - [Adapter Design Pattern](#adapter-design-pattern)
+  - [Bridge Design Pattern](#bridge-design-pattern)
+  - [Composite Design Pattern](#composite-design-pattern)
+  - [Decorator Design Pattern](#decorator-design-pattern)
+  - [Facade Design Pattern](#facade-design-pattern)
+  - [FlyWeight Design Pattern](#flyWeight-design-pattern)
+  - [Proxy Design Pattern](#proxy-design-pattern)
 
-- Behavioral Patterns
-  - Chain Of Responsibility Design Pattern
-  - Command Design Pattern
-  - Interpreter Design Pattern
-  - Iterator Design Pattern
-  - Mediator Design Pattern
-  - Memento Design Pattern
-  - Observer Design Pattern
-  - State Design Pattern
-  - Strategy Design Pattern
-  - Template Method Design Pattern
-  - Visitor Design Pattern
+- [Behavioral Patterns](#behavioral-patterns)
+  - [Chain Of Responsibility Design Pattern](#chain-of-responsibility-design-pattern)
+  - [Command Design Pattern](#command-design-pattern)
+  - [Interpreter Design Pattern](#interpreter-design-pattern)
+  - [Iterator Design Pattern](#iterator-design-pattern)
+  - [Mediator Design Pattern](#mediator-design-pattern)
+  - [Memento Design Pattern](#memento-design-pattern)
+  - [Observer Design Pattern](#observer-design-pattern)
+  - [State Design Pattern](#state-design-pattern)
+  - [Strategy Design Pattern](#strategy-design-pattern)
+  - [Template Method Design Pattern](#template-method-design-pattern)
+  - [Visitor Design Pattern](#visitor-design-pattern)
 
 - Other Patterns
 
@@ -95,51 +95,51 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 ![image](https://user-images.githubusercontent.com/16361055/80761590-86459c00-8b43-11ea-91ee-f34cab73d1d7.png)
 
-### Structural Patterns
+### <a name="structural-patterns">Structural Patterns</a>
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adapter Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="adapter-design-pattern">Adapter Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Belirli bir işlemi gerçekleştiren bir interface kullandığımızı varsayalım. Bu interface'in imzasını taşıyan bir çok sınıf olabilmektedir. Ancak benzer görevi gerçekleştiren ve bu interface'nin imzasını taşıyamayan sınıfları kullanmamız gerekir ise hali hazırdaki kodlarımızı değiştirmek yerine; interface ve sınıf arasında bir adapter çeviricisi koyarak etkileşimi sağlamak için bu tasarım deseni kullanılmaktadır.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz sebepten bir adapter kullanma ihtiyacı doğmuştur. IXmlToJson interfacemiz bir imza olarak oluşturulmuştur. Client bu imza ile birlikte XmlToJsonConverter sınıfını kullanarak xml dosyalarını json tipine çevirebilmektedir. Farklı bir yerde kullanılan bir sınıf olan ObjectToJsonConverter sınıfımız var ve bu interface ile kullanılmak istenmektedir. Amaç olarak bu sınıf da Json üretmektedir. Ancak mevcut interface miz ile uyumlu değildir. Bu sebeple bu interface ile bu sınıfı birleştirmek için araya bir adapter koyduk ve başarılı bir şekilde bağlantı kurmuş olduk. Böylece Client her iki sınıfı da kullanabilmektedir.
 
 ![image](https://user-images.githubusercontent.com/16361055/81220941-d19bf680-8fea-11ea-8218-8802e953efea.png)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bridge Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="bridge-design-pattern">Bridge Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Belirli bir forma sahip sınıfların farklı implementasyonlarla etkileşiminin ayrı ayrı tanımlanmasından ziyade, köprü misali bir yapı oluşturarak, istenilen sınıfı gereken implementasyonu ile eşleştirerek kullanılan bir tasarım kalıbıdır.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde asıl işlem görecek gerçek sınıflarımız, Document abstract sınıfını kalıtım alan sınıflardır. IDatabase interface'i ise hazırlanan sınıfların ne tür işlem göreceğini belirtmektedir. Rapor ve yazı şeklinde belge hazırladığımızı varsayarsak; hazırlanan belgeleri kaydetmek için mysql veya postgresql veritabanlarından birini seçtiğimizi belirteceğiz. Her işlem gören belge kendi içerisinde hangi veritabanını seçtiğini belirtecek. Aksi halde yapılması gereken, tüm belgelerin ayrı ayrı veritabanlarıyla olan etkileşimine dönüşecektir. Bu kullanımın önüne geçmek için bridge tasarım deseni geliştirilmiştir.
 
 ![image](https://user-images.githubusercontent.com/16361055/81976304-01717c80-9631-11ea-8e70-60fae7245e39.png)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Composite Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="composite-design-pattern">Composite Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir grup işlemin alt gruplara ayrılarak, ağaç yapısı şeklinde oluşturulması ve işlenmesi için kullanılan bir tasarım kalıbıdır.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir ağaç yapısı gösterilmiştir. Bir Manager sınıfımız ve altında başka manager ve depeloper barındırabilecek şekilde ağaç yapısında oluşturuldu. Developer sınıfı ise bir tane ve altında grup barındırmayan bir yapı olarak tasarlandı. Kullanıcı IWorker arayüzünü kullanarak alt alta oluşan tüm grup ve tekil kişilere erişim imkanı sağlamaktadır. Örneğimizde ise en üst kademedeki kişiye toplam çalışma zamanını sorduğumuzda tüm alt yapıları dolaşarak bize toplamı gösterme imkanı sunmaktadır. Böylece karmaşık bir yapıdan ziyade sınıflandırılmış ve kolay işlenebilir bir yapı oluşturulmuştur.
 
 ![image](https://user-images.githubusercontent.com/16361055/82235913-05a4df00-993c-11ea-9551-28a0f466360e.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Decorator Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="decorator-design-pattern">Decorator Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir interface'i kalıtım alan benzer ürün sınıflarının, aynı interface'i kalıtım alan bir tasarımsal sınıf yardımıyla, benzer ürün sınıflarına yeni özellikler kazandırılmasıdır.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir interface ve bu interface'den kalıtım alan benzer ürünler olarak Laptop ve DesktopPc sınıflarını oluşturulmuştur. Bu benzer nesnelere farklı donanımlar eklemek için aynı interface'i kalıtım alan bir tasarımsal sınıf olarak ComputerDecorator oluşturuldu. Bu tasarımsal sınıfa diğer benzer ürünlerin gönderilmesi ve yeni özellik sınıflarıyla sarmalanmasıyla yeni özellikler kazandırılmaktadır.
 
 ![image](https://user-images.githubusercontent.com/16361055/82237271-0b032900-993e-11ea-8771-dd16cccb9bba.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Facade Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="facade-design-pattern">Facade Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir istemcinin bir grup işlemi yapmak için, bir sınıf ile iletişim kurarak ve bu sınıfın ne yaptığına bakmadan sonucunu istemesidir. İletişim kurulan sınıf alt sınıflarla iletişim kurarak kendi içerisinde bir grup işlemi tamamlamakta ve istemciye dönmektedir. Bu şekilde istemci detaylarla ilgilenmeden istediği sonuca ulaşmaktadır.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde istemcinin iletişim kurması ve bir grup işlemi yaptırıp, sonucunu alabilmesi için bir adet Reporting adında bir raporlama facade sınıfı oluşturulmuştur. Bu sınıf verilen isme göre kendi içerisinde veritabanından ilgili veriyi okumakta, rapor oluşturmakta ve bu oluşturulan sınıfı mail olarak göndermektedir. Reporting facade sınıfımız dönüş objesi olarak yapılan işlemlerin loglarını dönmektedir. Böylece istemci Reporting facade sınıfına sadece kişi ismini bilgirerek, yapılan işlemleri bilme gereği duymadan, işlemlerini tamamlayacaktır.
 
 ![image](https://user-images.githubusercontent.com/16361055/82492439-e13d3400-9aee-11ea-80f7-42ac2931059b.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FlyWeight Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="flyWeight-design-pattern">FlyWeight Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kaynak tüketiminin en aza indirilmesi amaçlanarak, nesnelerin bir fabrika içerisinde oluşturulması ve daha sonra kullanımak üzere bu oluşturulan nesnelerin fabrika aracılığıyla birden fazla istemci tarafından aynı anda kullanılması için tasarlanan bir kalıptır.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde, ShapeFactory adında nesne oluşturan ve sonradan kullanılmak üzere bu oluşturulan nesneleri saklayan bir fabrika sınıfı oluşturulmuştur. İstemci Rectangular veya Square sınıflarını bir kez çağırdığında fabrikada saklanmakta ve tekrar istendiğinde veya farklı istemciler tarafında aynı anda istenildiğinde mevcut nesne kullanıma sunulmaktadır. Böylece tek bir nesne ile tüm işlemler yapılmakta ve kaynak tüketimi en aza indirgenmektedir.
 
 ![image](https://user-images.githubusercontent.com/16361055/82496309-30866300-9af5-11ea-8614-b3f62296f711.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Proxy Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="proxy-design-pattern">Proxy Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir interface'e bağlı olan bir sınıfın, yapacağı işlemi güvenlik, hız vb. nedenlerle farklı bir sınıf aracılığı ile mevcut interface'e bağlı olarak oluşturulması ve kullanılmasıdır.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kullanım çeşitliliği olarak 3'e ayrılır.
@@ -152,86 +152,82 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 ![image](https://user-images.githubusercontent.com/16361055/82237535-7baa4580-993e-11ea-941e-3790fe34b9ac.jpg)
 
 
-### Behavioral Patterns
+### <a name="behavioral-patterns">Behavioral Patterns</a>
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chain Of Responsibility Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="chain-of-responsibility-design-pattern">Chain Of Responsibility Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir işlemi gerçekleştirmek için yapılan; sıralı işlemleri veya if else if blokları şeklinde oluşturulan algoritmaları zincir şeklindeki bir model ile her nesneyi bir sonraki nesneye bağlayarak bağımlılığı gideren ve her nesnenin kendisine tanımlı işi yapmasını sağlayan bir tasarım desenidir.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde 4 işlem(Toplama, Çıkarma, Çarpma, Bölme) yapan sınıfların bir zincir şeklinde, her nesnenin bir sonraki nesneye bağlanmasıyla Chain of Responbitility tasarım deneni uygulanmıştır. Zincir sıralama işlemi, istemci tarafından belirtilerek, hangi sıra ile devam edeceğini bildirmektedir. İlgili sırada belirtilen işlemi yapacak herhangi bir sınıf bulunamazsa, zincirin sonucu olarak null dönmektedir.
 
 ![image](https://user-images.githubusercontent.com/16361055/82717527-4d619880-9ca5-11ea-8f42-cf0534931f73.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Command Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="command-design-pattern">Command Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir olayı gerçekleştirmek için yapılması gereken işlemlerin bir nesne içerisinde yerleştirilerek, başka bir nesne aracılığı ile alıcıya ulaştırılmasıdır. Burada taşıyıcı nesnenin taşıdığı nesnenin içerisindeki bilginin ne olduğunu bilmesine gerek yoktur. İşlemin yapılma emrini veren kişi ile işlemi yapacak olan kişi arasına bir aracı koyarak bağımlılıkları azaltmak hedeflenmiştir. Ayrıca verilen komutların bir kaydı tutularak, yapılan işlemleri geri alma veya ileri alma işlemleri kolaylıkla yapılabilmektedir.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir metin editörü oluşturulmuştur. Bu oluşturulan metin editöründe işlem yapabilmek için karakter girme ve karakter silme sınıfları hazırlanmıştır. Metin editörünün kullanılması için emri gönderen nesne olan klavye girişi sınıfı oluşturulmuş ve bu klavye girişi sınıfı ile metin editörü sınıfı arasına bir komut taşıyıcı olarak karakter girme ve karakter silme sınıfları eklenmiştir. Böylece bu aradaki komut taşıyıcısındaki işlemleri her adımda kaydederek yapılan işlemlerin tersini uygulayabilme, geri alabilme ve ileri alabilme işlemleri gerçekleştirilmiştir.
 
 ![image](https://user-images.githubusercontent.com/16361055/82753594-7120fd80-9dcf-11ea-8910-2c4a6be56d28.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Interpreter Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="interpreter-design-pattern">Interpreter Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Interpreter(Yorumlayıcı) tasarım deseni bir düzene sahip olan metin durumdaki verileri işleyerek yorumlama veya çevirme işlemleri gerçekleştirmektedir. Örnek olarak metin olarak verilen roma rakamlarının sayısal bir ifadeye çevrilmesinde kullanılabilinmektedir. MCCL şeklindeki bir girdinin, 1250 sayısal değeri şeklinde çıkması sağlanabilinmektedir. Burada tasarım kalıbının üstlendiği görev, metin verisinin teker teker işlenmesi ile anlamlı bir sonuç elde etme işlemidir.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde, postfix işleminin yorumlanması ve anlamlı bir sonuç üretmesi üzerine bir program hazırlanmıştır. Örnek olarak verilen '10 44 23 19 - - +' postfix ifadesinin işlenmesi 2 kısım olarak ele alınmıştır. 'Terminated' olarak ifade edilen sayıları alan kısım ve 'NonTerminated' olarak ifade edilen sayıları yorumlayan kısımdır. Program içerisinde işlem sıralarını belirleyerek non terminated kısımlar toplama veya çıkarma işlemlerini gerçekleştirmekte ve 50 sonucunu üretmektedir. Bu şekilde farklı algoritmalarla farklı metinleri de aynı şekilde işleme sokabiliriz.
 
 ![image](https://user-images.githubusercontent.com/16361055/83047253-c586e000-a050-11ea-83c6-f2005fd64b48.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Iterator Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="iterator-design-pattern">Iterator Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Interator tasarım deseninin mantığı; bir listenin elemanları üzerinde teker teker işlem yapma ve listenin sonuna gelindiğinde bu durumu belirtme olarak tanımlayabiliriz. Günlük hayatta kullandığımız foreach yapısı, iterator tasarım kalıbını kullanan bir örnek olarak verilebilir. Listenin elemanlarını teker teker dolaşarak işlem yapma olanağı sağlamakta ve listenin sonuna gelindiğinde döngüden çıkmaktadır.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir IIterator interface'ini ve yapacağı işlemleri imza olarak alan bir Iterator sınıfı ve bu sınıfı oluşturan IIteratorCreator interface'inin imzasını alan IteratorCreator sınıfı, bir liste alarak IIterator listesi dönmektedir. Bu liste içerisindeki 'HasNextElement' methodu while içerisinde çağırıldığı her adımda mevcut nesneyi veren 'CurrentElement' nesnesini her adımda bir sonraki nesne olarak güncelleyecektir. Bu listenin sonuna gelindiğinde 'HasNextElement' methodu false döneceğinden döngüden çıkılacaktır. Bu şekilde foreach yapısınının bir benzeri olarak iterator tasarım kalıbı uygulanmıştır.
 
 ![image](https://user-images.githubusercontent.com/16361055/83192548-60111d00-a13e-11ea-964c-d2052d707f40.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mediator Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="mediator-design-pattern">Mediator Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mediator tasarım kalıbı objeler arası iletişim karmaşıklığını gidermek amacıyla, ortak bir iletişim nesnesi ile iletişim kurulması üzerine tasarlanmıştır. Örneğin havalimanındaki uçaklarla haberleşen kule bu tasarım kalıbına örnektir. Uçakların aracısız birbiriyle haberleşmesi, iniş ve kalkış durumlarında yoğunluktan karmaşık bir durum alacaktır. Ancak kule üzerinden hangi uçağın kalkış, hangi uçağın iniş yapacağı bilgisi düzenlenerek her uçak bu bilgiyi kuleden ister ise bir düzen oluşacaktır.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde şirket içi çalışanların haberleşmesini sağlayan bir mesajlaşma uygulaması örneği verilmiştir. Bu örnekte bir yazılımcı sınıfı ve bir de stajyer sınıfı bulunmaktadır. Her çalışan mesajlaşma uygulamasına kayıt oluşturarak diğer kullanıcılara bu uygulama üzerinden mesaj gönderebilecektir. Burada iletişim aracı olarak mediator nesnesi üzerinden haberleşme sağlanarak mesajlaşma yapılmıştır. Yani bir kişi mesajlaşma uygulaması ile çalışma arkadaşlarına bir mesaj göndermek isteseydi, uygulamaya kayıtlı tüm kişilere bu mesajı göndermesi gerekirdi. Ancak metiator nesnesine bu mesajın herkese gönderileceğini belirterek, tek bir komut ile herkese gönderim sağlamaktadır.
 
 ![image](https://user-images.githubusercontent.com/16361055/83569336-fc676500-a52c-11ea-9943-94cc57f5bf29.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Memento Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="memento-design-pattern">Memento Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Memento tasarım kalıbı, bir nesnenin belirli bir anda ve belirtilen alanlarının kaydını saklayarak, istenilen zamanda bu kayıtların geri yüklenmesini sağlamaktadır. Bu şekilde işlemler gerçekleştirerek nesnenin önceki veya sonraki kayıtlarının saklanmasını mümkün kılmaktadır
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir oyun alt yapısı tasarlanmıştır. Game nesnesi oyunu oluşturan kod parçacığı olarak görev yapmaktadır. Oyunda bölümleri tamamlayarak bir sonraki seviyeye geçme üzerine kurulu bir sistem oluşturulmuştur. CareTaker denilen farklı bir kod parçacığı da Game nesnesi üzerinde işlemler gerçekleştiren bir yardımcı sınıfımız olarak oluşturulmuştur. Bu yardımcı nesneye belirli bir levelde kayıt almasını söylediğimizde, Game nesnesindeki kayıt methodunu çağırarak gerekli alanların kaydını saklamaktadır. Game nesnesinden oyuna devam ederek farklı levellere eriştiğimizde, kaydını aldığımız bölüme geri dönüş yapmak için yardımcı sınıfımıza bizi kaydın alındığı levele geri götürmesi bildirebilmekteyiz. Böylelikle herhangi bir zamanda aldığımız kaydı, istediğimiz zaman geri yükleyebilmekteyiz. 
 
 ![image](https://user-images.githubusercontent.com/16361055/84943142-9b26c080-b0ec-11ea-8162-80f3d149b474.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Observer Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="observer-design-pattern">Observer Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Observer tasarım kalıbı, bir sunucuda gerçekleşen herhangi bir olayın, gerçekleştiği anda sunucunun istemcilere bildirmesi olarak tanımlanabilmektedir. İstemcilerin devamlı sunucuya giderek olay gerçekleşti mi diye sormasından ziyade, sunucunun istemcileri olayın gerçekleştiğinde haberdar etmesidir.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir sunucu ve istemciler oluşturulmuştur. Sunucumuz hava sıcaklığı bilgisini sağlamaktadır. İstemciler ise sıcaklığı gösteren birer termometre olarak görev almaktadır. Hava sıcaklığı değiştiğinde sunucu istemcilere, hava sıcaklığının değiştiğini bildirmektedir. İstemciler sunucuya gidip hava sıcaklığı değişti mi diye sormamaktadır. Sunucu tarafından bilgilendirilmektedirler.
 
 ![image](https://user-images.githubusercontent.com/16361055/85059213-efdd4080-b1ab-11ea-9e1b-8ccbb3684922.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; State Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="state-design-pattern">State Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; State tasarım kalıbı, nesnenin farklı durumlarda farklı davranışlar sergilemesini sağlamaktadır. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz şekilde bir klima için bir takım komutlar oluşturulmuştur ve klima için 2 adet durum tanımlanmıştır. Bunlar klimanın açık olma ve kapalı olma durumudur. Klima nesnesi ilk oluşturulduğunda kapalı durumda oluşturulmaktadır. Nesneye açılma komutunu verdiğimizde, açık durumuna geçecektir ve açıldığında sıcak veya soğuk hava vermesini söyleyebilmekteyiz. Kapalı olduğu durumda sıcak veya soğuk hava vermesini söylediğimizde bizde klimanın ilk önce açık durumuna getirilmesini söylemektedir. Bu şekilde her durumda farklı işlemler gerçekleştirerek farklı durumlar ortaya çıkarılmıştır.
 
 ![image](https://user-images.githubusercontent.com/16361055/85065122-4ef38300-b1b5-11ea-9583-a7bf0255fc37.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Strategy Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="strategy-design-pattern">Strategy Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Strategy tasarım kalıbı, bir işlemin farklı algoritmalarla gerçekleştirilmesini sağlamaktadır.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz gibi, bir metni şifreleyen program yazılmıştır. Hazırlanan programda mevcut metnin şifrelenmesi ve bu şifreli metnin çözülmesi durumları oluşturulmuştur. Programın şifrelemede kullandığı birbirinden farklı şifreleme algoritmaları için; belirli bir düzende tasarım oluşturularak, isteğe göre algoritma değişimleri ve yeni algoritma eklemeleri yapılabilmektedir.
 
 ![image](https://user-images.githubusercontent.com/16361055/85184402-635c7c00-b298-11ea-8f09-577bc23d5ec7.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Template Method Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="template-method-design-pattern">Template Method Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Template Method tasarım kalıbı, birkaç adımdan oluşan sıralı işlemlerin gerçekleştirildiği bir temel sınıf tanımlanması ve bu sıralı işlemlerin belirli kısımları hariç değiştirilemez bir akış oluşturulmasıdır. Değiştirilebilecek kısımlar farklı sınıflara kalıtım verilerek, yeni algoritmalarla akış tamamlanabilmektedir.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz gibi bir temel sınıf oluşturulmuştur. Bu temel sınıf içerisinde bulunan Template Method, program içerisindeki akışı baştan sona çalıştıran bir fonksiyondur. Akış içerisinde belirli kısımlar farklı algoritmalarla doldurulması için boş bırakılmıştır. Temel sınıfımız abstract olduğu için tek başına çalıştırılamayacaktır ve bir sınıfa kalıtım vererek gerekli fonksiyonların doldurulması sağlanmaktadır.
 
 ![image](https://user-images.githubusercontent.com/16361055/85200062-fdeea680-b2fc-11ea-876c-e6695a6c83d3.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Visitor Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="visitor-design-pattern">Visitor Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Belirli bir işlemi yerine getiren koda yeni bir özellik eklemek istenildiğinde bazı engeller ortaya çıkabilmektedir. Örneğin test edilmiş ve aktif olarak çalışan kodun değiştirilmesi her zaman mümkün olmadığından dolayı, eklenecek yeni özelliğin ayrı bir modül olarak eklenmesi gerekmektedir. Mevcut programımızın nesnesini, ek olarak eklediğimiz modülümüze ziyaretçi olarak göndererek işlemlerimizi gerçekleştirebilmekteyiz.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıdaki UML diagramında yukarıda bahsettiğimiz gibi bir tasarım uygulanmıştır. Hazırlanan programda istenilen yemeklerin fiyatlarını gösterdiğimiz bir uygulama oluşturulmuştur. Fiyatlara ek olarak vergilendirme fiyatının eklenmesi istenmiştir. Ancak programımızın içerisine vergilendirme modülünü eklememiz hem tek sorumluluk prensibini çiğneyecektir, hem de kodun tekrardan test edilmesi gibi uzun bir sonuç oluşturacaktır. Bu soruna çözüm olarak vergilendirme modülünü ayrı bir modül olarak hazırlamakta ve programımızın nesnesini ziyaretçi olarak yeni modüle göndermekteyiz. Bu şekilde nesnemiz ziyaretçi olarak gittiği sınıf içerisinde ek vergilendirme işlemlerini uygulayarak, fiyat arttırma işlemini gerçekleştirmektedir.
 
 ![image](https://user-images.githubusercontent.com/16361055/85203640-cb05dc00-b317-11ea-8c28-39953754f037.jpg)
 
-
-### Other Patterns
-
-> Geliştirme devam ediyor.
