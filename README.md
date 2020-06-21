@@ -41,8 +41,6 @@ Bu projede, 3 kategorideki tüm tasarım kalıpları örneklerle incelenmiştir.
   - [Template Method Design Pattern](#template-method-design-pattern)
   - [Visitor Design Pattern](#visitor-design-pattern)
 
-- Other Patterns
-
 ### Creational Patterns
 
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="factory-design-pattern">Factory Design Pattern</a>
