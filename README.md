@@ -11,13 +11,13 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 ### Projede Anlatılan Tasarım Kalıpları (Design Patterns) 
 
-- Creational Patterns
-  - Factory Design Pattern
-  - Abstract Factory Design Pattern
-  - Builder Design Pattern
-  - Prototype Design Pattern
-  - Singleton Design Pattern
-  - Object Pool Design Pattern
+- [Creational Patterns](#creational-patterns)
+  - [Factory Design Pattern](#factory-design-pattern)
+  - [Abstract Factory Design Pattern](#abstract-factory-design-pattern)
+  - [Builder Design Pattern](#builder-design-pattern)
+  - [Prototype Design Pattern](#prototype-design-pattern)
+  - [Singleton Design Pattern](#singleton-design-pattern)
+  - [Object Pool Design Pattern](#object-pool-design-pattern)
 
 - Structural Patterns
   - Adapter Design Pattern
@@ -45,7 +45,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 ### Creational Patterns
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Factory Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="factory-design-pattern">Factory Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Birbiriyle benzerlik gösteren işlemleri yapan classları bir araya toplamak için, gerektiğinde kolaylıkla tek bir yerden tüm yerde kullanılan classı değiştirebilmek için ve yönetimini kolayca sağlamak için factory design pattern'i kullanırız. Bu pattern yeni oluşturulacak bir nesneyi otomatik olarak oluşturarak bize dönmektedir. Otomatik oluşturma kısmında adını da aldığı üzere fabrika misali, gerekli işlemleri yaparak nesneyi oluşturur. Fabrika içerisinde istediğimiz işlemleri yapabiliriz. Mesela bu dökümanda da bulunan singleton patternini uygulayarak, tekrar tekrar nesne oluşturulmasını engelleyebiliriz.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Örneğimizde, mesaj gönderen bir uygulamanın tasarımını yapmaya çalıştık. Sms ve Email olarak gönderim çeşitleri mevcut. Bu sınıflar Message abstract ata sınıfına bağlılar. Fabrika modelinde ise oluşturulan gerçek sınıfların her birinin fabrikası mevcut. Tek fabrika üzerinden de durumu oluşturabilirdik. Genelde örnekler tek fabrika üzerinden gösterilmekte. Biz bu örneğimizde her Mesaj gönderim çeşidinin farklı fabrika olmasını sağladık. Böylece fabrika içerisinde yapılacak her ince iş kendi bölümünde bulunarak, Single responsibility prensibini de  uygulayarak, karmaşıklığı önleyecektir.
@@ -55,14 +55,14 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 ![image](https://user-images.githubusercontent.com/16361055/79768529-94b9d980-8333-11ea-83c6-c922ac2347a8.png)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Abstract Factory Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="abstract-factory-design-pattern">Abstract Factory Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Birbiriyle ilişkili ve farklı varyantlara sahip sınıfların üretiminde kullanılan bir tasarım kalıbıdır. İlişkili ürünler bir matris biçiminde tasarlanması gerekmektedir. Aşağıda UML diagramı Abstract Design Patterni temsil etmektedir. Örneğimizde bir yayınevimiz var ve bu yayın evinde ; kitap ve gazete üretimi yapmaktadır. Gereken durumlarda yeni ürünlerin eklenebilecek olması da tabiki bu tasarım kalıbının geliştirilebilir olmasının yararıdır. Üretimi yapılan kitap ve gazete ürünlerinin ingilizce ve rusça olarak 2 üretim çeşidini oluşturduk. Böylece bir matris görünümü elde ederek gereken şartlar sağlandı. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aşağıda verilen UML diagramında, genelde çizilen UML diagramlarının aksine, farklı bir çizim tasarımı kullanılarak matris şeklinde oluşturulmuş ve anlaşılması kolaylaştırılmıştır. Böylece Client , PublishingService(YayıneviServisi) yetkilisiyle iletişim kurarak, dil seçimini yaparak istediği ürünü üretim için istekte bulunabilecektir. Üzerine konuştuğumuz UML diagramı aşağıdadır.
 
 ![image](https://user-images.githubusercontent.com/16361055/79878898-a4e6bd00-83f6-11ea-8f91-407dcaec4de1.png)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Builder Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="builder-design-pattern">Builder Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Builder Design Pattern, bir bütünü oluşturan parçaların birleştirilmesiyle ortaya yeni bir ürün çıkartmak için kullanılan bir tasarım kalıbıdır. Parçalardan istediğimizi eklemek yada eklememek tercihine sahibiz.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Bu tasarım kalıbının ortaya çıkmasına sebep olan sorun şöyledir; bir bütünü oluşturduğumuzu düşünelim. Bu bütünü tek bir sınıf üzerinden parametre ile yönetmeye kalktığımızda, bir çok parametre yanyana verilecek ve istenmeyen değerler null olarak atanmak zorunda kalacaktır. Böyle bir durum ise oldukça karmaşıklığa sebep olmaktadır. Ancak eklenmek istenen parçalar ayrı methodlar halinde eklendiğinde, hem okunurluk artacak hem de kolay yönetim sağlanarak modülerite artacaktır.
@@ -71,7 +71,7 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 ![image](https://user-images.githubusercontent.com/16361055/80277773-027e5080-86fa-11ea-83de-2a6f20c4414f.png)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Prototype Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="prototype-design-pattern">Prototype Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bir işlemi gerçekleştirebilmek için devamlı aynı nesnenin üretilmesi ve üzerine farklı eklemeler yapıldığı durumlarda kullanılmaktadır. Devamlı kullanılacak bir prototip oluşturulmaktadır ve gerektiği yerlerde bu prototip alınarak üzerine eklemeler yapılmaktadır. Prototip için hazırladığımız nesneyi bir sınıfın içine koyabiliriz ve bu nesneyi gerektiği yerlerde belirli kopyalama fonkisyonlarına göre bir kopyasını oluşturarak alabiliriz.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mevcut nesnenin erişilemeyen değişkenlerini aynı şekilde kopyalayabilmek için veya veritabanından alınan bilgilerle içeriğinin doldurulmasından dolayı ortaya çıkaibilecek yavaşlıktan kurtulmak için bu tasarım deseni kullanılmaktadır. 
@@ -81,12 +81,12 @@ Biz bu projemizde bu 3 kategorideki tüm tasarım kalıplarını ve ekstra farkl
 
 ![image](https://user-images.githubusercontent.com/16361055/80307484-05e50b00-87d2-11ea-87ef-e4ef199c2ecd.jpg)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Singleton Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="singleton-design-pattern">Singleton Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yapacağımız işlemler için bir nesnenin bir kez oluşturulmasının yeterli olduğu durumlarda kullanılır. Sınıfımızın nesnesini bir kez tanımlarız ve programı durdurana kadar bu nesne üzerinden işlem yaparız. İlgili sınıftan bir nesne talep ettiğimizde ilk kez işlem yapılıyorsa yeni bir nesne dönecek ancak ilk seferden sonrakilerde aynı nesneyi verecektir. Programdaki örneğimizde toplama ve çıkartma işlemi yapan bir sınıf oluşturduk. Toplama ve çıkartma işlemlerinde parametreler ile çalışan methodlar bize yeterli olduğu için hesaplama sınıfın aracı olarak kullandık. Bir kez tanımladıktan sonra hep aynı nesneyi kullandık. Örnek UML diagramı aşağıdadır.
   
 ![image](https://user-images.githubusercontent.com/16361055/79700520-e2d0cd80-829e-11ea-9c6f-2320bd769ec1.png)
 
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Object Pool Design Pattern
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a name="object-pool-design-pattern">Object Pool Design Pattern</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bazen bir nesnenin aynısından çok fazla oluşturmamız gerekebilir. Örneğin bir oyunda atılan mermileri örnek olarak düşünürsek, mermiler hem devamlı oluşturulacak hem de aynı işlemi görecektir. Ancak her defasında yeni nesne oluşturulması maliyetli olacaktır.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Devamlı kullanılan nesnelerin her defasında tekrar oluşturulma maliyetinden kurtulmak için tasarlanmış olan Object Pool design pattern, oluşturulan ve görevini tamamlamış nesneleri bellekten silmeden bir havuzda saklamaktadır. Ve daha sonra gerektiği yerde bu havuzdan alınması ve kullanılması üzerine işlemler yapılmaktadır.
